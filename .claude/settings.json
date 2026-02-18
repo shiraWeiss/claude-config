@@ -5,5 +5,17 @@
       "Bash(git add:*)",
       "Bash(git commit:*)"
     ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "input=$(cat); dir=$(echo \"$input\" | jq -r '.workspace.current_dir'); model=$(echo \"$input\" | jq -r '.model.display_name'); used=$(echo \"$input\" | jq -r '.context_window.used_percentage // \"0\"'); branch=$(cd \"$dir\" 2>/dev/null && git -c core.filemode=false config --global --add safe.directory \"$dir\" 2>/dev/null; git -c core.filemode=false rev-parse --abbrev-ref HEAD 2>/dev/null || echo 'no git'); git_status=$(cd \"$dir\" 2>/dev/null && [ \"$branch\" != \"no git\" ] && git -c core.filemode=false status --porcelain 2>/dev/null); [ -n \"$git_status\" ] && branch=\"$branch *\"; printf \"\\033[34m%s\\033[0m | \\033[33m%s\\033[0m | \\033[32m%s\\033[0m | \\033[35mContext: %s%%\\033[0m\" \"$dir\" \"$model\" \"$branch\" \"$used\""
+  },
+  "enabledPlugins": {
+    "agent-standard-mcps@agentic-builders-hub": true,
+    "typescript-lsp@claude-plugins-official": true,
+    "code-review@claude-plugins-official": true,
+    "code-simplifier@claude-plugins-official": true,
+    "explanatory-output-style@claude-plugins-official": true,
+    "pr-interactive-review@agentic-builders-hub": true
   }
 }
