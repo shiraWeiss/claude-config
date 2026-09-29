@@ -22,6 +22,11 @@ description: Use when writing or modifying code. Keep code clean - short single-
 - **No magic strings or numbers.** Extract them into named constants.
 - **Keep constants organized.** If a file defines more than a few constants, move them to a dedicated constants file.
 
+### Comments
+
+- **Comments are a last resort.** Never write a comment to explain what the code does. Make the code say it through naming and structure. Comment only when the code can't explain itself, such as a non-obvious reason, a workaround, or a hidden constraint.
+- **Documentation is different.** Public APIs and other entry points can and should have docs that describe their contract.
+
 ## 2. Don't Reinvent - Check First
 
 ### Before implementing, look for an existing solution
