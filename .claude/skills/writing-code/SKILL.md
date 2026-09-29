@@ -30,7 +30,13 @@ Don't hand-write common functionality like retries, parsing, validation, date ha
 
 1. **This codebase.** Is there already a helper or utility for it?
 2. **The language's standard library and the frameworks already in use.**
-3. **Public open-source packages.** Search the package registry or GitHub for a maintained, widely used option.
+3. **Public open-source packages.** Search the package registry or GitHub. Use a package only if it's reliable:
+   - Actively maintained, with recent releases and responsive issues
+   - Widely used, with many downloads and dependents
+   - A reasonable license and no known unpatched vulnerabilities
+   - A small dependency footprint for what it does
+
+   If nothing meets that bar, a small in-house version beats a risky dependency.
 
 Write it yourself only when nothing fits, or when adding a dependency costs more than the code it replaces.
 
