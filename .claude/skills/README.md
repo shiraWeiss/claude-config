@@ -11,7 +11,7 @@ Skills can be invoked in two ways:
 
 ## Creating Skills
 
-Create skill files with a `.md` extension. Each skill should contain:
+Each skill is a folder containing a `SKILL.md` that starts with YAML frontmatter (`name`, `description`). To use a skill globally, symlink its folder into `~/.claude/skills/`. Each skill should contain:
 
 - A clear description of what the skill does
 - The prompts and instructions for Claude
@@ -27,6 +27,6 @@ Create skill files with a `.md` extension. Each skill should contain:
 ```
 .claude/skills/
 ├── README.md          # This file
-├── example-skill.md   # Example skill file
-└── your-skill.md      # Your custom skills
+├── pr-review/SKILL.md
+└── writing-code/SKILL.md
 ```

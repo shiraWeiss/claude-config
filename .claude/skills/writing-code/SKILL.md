@@ -1,10 +1,9 @@
+---
+name: writing-code
+description: Use when writing or modifying code. Verify external framework/library APIs against their docs before calling them, and keep code clean - short single-abstraction functions, precise names, no magic values.
+---
+
 # Writing Code
-
-**Skill Name**: `writing-code`
-
-## Description
-
-Use when writing or modifying code. Covers two rules: verify external APIs before calling them, and keep code clean and self-explanatory.
 
 ## 1. Check the Docs First
 

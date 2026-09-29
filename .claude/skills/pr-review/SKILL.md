@@ -1,6 +1,10 @@
+---
+name: pr-review
+description: Use when asked to review a GitHub PR. Conducts a comprehensive review in the user's personal style - code consistency, security patterns, and constructive, enthusiastic feedback.
+---
+
 # PR Review Agent Skill
 
-**Skill Name**: `pr-review`
 **Aliases**: `review-pr`, `analyze-pr`
 **Version**: 1.0.0
 
