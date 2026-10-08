@@ -22,6 +22,18 @@ description: Use when writing or modifying code. Keep code clean - short single-
 - **No magic strings or numbers.** Extract them into named constants.
 - **Keep constants organized.** If a file defines more than a few constants, move them to a dedicated constants file.
 
+### Files and folders
+
+- **Structure by feature, not by type.** A folder is named after what it does (`approved-plan/`, `plan-store/`), not what it holds (`utils/`, `types/`, `helpers/`). Its tests, types, and constants live inside it.
+- **An entry file only orchestrates.** It reads as the steps of its flow and imports each step from a feature folder. Once it holds the details of a step, such as validation, lookups, state assembly, or persistence, move that step into its own folder with its own tests.
+- **Split a file when any of these is true:**
+  - It has more than one reason to change, for example input validation and result rendering side by side.
+  - It defines types or helpers that only one part of it uses.
+  - A part of it needs its own tests, or is only tested through the whole file.
+  - It's past about 150 lines.
+- **Nest to keep each folder layer small.** Aim for about 7 entries per folder, counting a file and its test as one. When a folder grows past that, group related files into a subfolder named after their shared feature. Never leave loose files beside feature folders at the same layer.
+- **Each folder exposes one surface.** Callers import from the folder's `index.ts`, not from its internal files.
+
 ### Comments
 
 - **Comments are a last resort.** Never write a comment to explain what the code does. Make the code say it through naming and structure. Comment only when the code can't explain itself, such as a non-obvious reason, a workaround, or a hidden constraint.
