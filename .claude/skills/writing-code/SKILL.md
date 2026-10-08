@@ -24,7 +24,8 @@ description: Use when writing or modifying code. Keep code clean - short single-
 
 ### Files and folders
 
-- **Structure by feature, not by type.** A folder is named after what it does (`approved-plan/`, `plan-store/`), not what it holds (`utils/`, `types/`, `helpers/`). Its tests, types, and constants live inside it.
+- **Structure by feature, not by type.** A folder owns one feature, with its tests, types, and constants inside it. Never group by kind (`types/`, `helpers/`), and never create `utils` files or folders: they have no scope and collect junk.
+- **Name a folder or file after its role, as an agent noun.** Use the thing that does the work: `order-builder/`, `route-planner/`, `input-validator/`, `price-calculator/`, `report-renderer/`. Don't use a noun phrase that only states a subject (`order/`, `pricing/`), or an action (`rendering/`, `validation/`).
 - **An entry file only orchestrates.** It reads as the steps of its flow and imports each step from a feature folder. Once it holds the details of a step, such as validation, lookups, state assembly, or persistence, move that step into its own folder with its own tests.
 - **Split a file when any of these is true:**
   - It has more than one reason to change, for example input validation and result rendering side by side.
